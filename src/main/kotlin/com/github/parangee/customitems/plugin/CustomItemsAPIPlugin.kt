@@ -32,7 +32,7 @@ class CustomItemsAPIPlugin : JavaPlugin() {
                                 if ((it.parseArgument("item") as CustomItem?) == null) {
                                     it.sender.sendMessage("아이템을 찾을 수 없습니다.")
                                 } else {
-                                    (it.sender as Player).inventory.addItem(Registry.customItems[it.getArgument("item")])
+                                    (it.sender as Player).inventory.addItem(Registry.customItems[it.getArgument("item")]?.javaClass?.newInstance())
                                 }
                             }
                         }
