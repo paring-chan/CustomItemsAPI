@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.3.72"
     id("com.github.johnrengelman.shadow") version "5.2.0"
     maven
+    `maven-publish`
 }
 
 group = "studio.pikolab"
@@ -36,7 +37,6 @@ tasks {
     }
     val sourcesJar by creating(Jar::class) {
         dependsOn(JavaPlugin.CLASSES_TASK_NAME)
-        classifier = "sources"
         from(sourceSets["main"].allSource)
     }
     artifacts {
