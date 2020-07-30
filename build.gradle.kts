@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.execution.ProgramText
+
 plugins {
     kotlin("jvm") version "1.3.72"
     id("com.github.johnrengelman.shadow") version "5.2.0"
@@ -18,6 +20,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     compileOnly("com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT")
     implementation("com.github.noonmaru:kommand:0.1.9")
+    implementation("com.github.parangee:chat-builder-api:0.0.4")
 }
 
 
@@ -35,11 +38,7 @@ tasks {
     shadowJar {
         archiveClassifier.set("lib")
     }
-    val sourcesJar by creating(Jar::class) {
-        dependsOn(JavaPlugin.CLASSES_TASK_NAME)
-        from(sourceSets["main"].allSource)
-    }
     artifacts {
-        add("archives", sourcesJar)
+        add("archives", shadowJar)
     }
 }
