@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "studio.pikolab"
-version = "1.0-SNAPSHOT"
+version = "0.1.1"
 
 repositories {
     mavenCentral()
@@ -38,5 +38,20 @@ tasks {
     create<Copy>("distJar") {
         from(shadowJar)
         into("W:\\Servers\\sample\\plugins")
+    }
+
+    create<Jar>("sourcesJar") {
+        archiveClassifier.set("sources")
+        from(sourceSets["main"].allSource)
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("CustomItemsAPI") {
+            artifactId = project.name
+            from(components["java"])
+            artifact(tasks["sourcesJar"])
+        }
     }
 }
