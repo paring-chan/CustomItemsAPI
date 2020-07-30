@@ -1,0 +1,8 @@
+name: CustomItemsAPI
+main: studio.pikolab.customitemapi.plugin.CustomItemsAPIPlugin
+version: 0.0.1
+depend:
+  - Kotlin
+commands:
+  cgive:
+    description: 커스텀아이템 지급 명령어

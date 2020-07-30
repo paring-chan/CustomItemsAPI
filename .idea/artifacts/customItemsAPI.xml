@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="customItemsAPI">
+    <output-path>$PROJECT_DIR$/../lw/plugin/server/plugins</output-path>
+    <root id="archive" name="customItemsAPI.jar">
+      <element id="module-output" name="custom-items-api.main" />
+    </root>
+  </artifact>
+</component>
