@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.persistence.PersistentDataType
 import com.github.parangee.customitems.Registry
 import com.github.parangee.customitems.plugin.CustomItemsAPIPlugin
+import org.bukkit.Material
+import org.bukkit.event.player.PlayerFishEvent
 
 class OnItemUse : Listener {
     @EventHandler
@@ -38,6 +40,17 @@ class OnItemUse : Listener {
                 PersistentDataType.STRING
             )
             Registry.customItems[memberName]?.onAttack(p, e)
+        }
+    }
+
+    @EventHandler(ignoreCancelled = true)
+    fun onFish(e: PlayerFishEvent) {
+        if (e.player.activeItem != null && e.player.activeItem!!.type == Material.FISHING_ROD) {
+            val memberName = e.player.activeItem?.itemMeta?.persistentDataContainer?.get(
+                NamespacedKey(CustomItemsAPIPlugin.instance, "customItem"),
+                PersistentDataType.STRING
+            )
+            Registry.customItems[memberName]?.onFish(e)
         }
     }
 }
