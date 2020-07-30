@@ -34,24 +34,12 @@ tasks {
     shadowJar {
         archiveClassifier.set("lib")
     }
-
-    create<Copy>("distJar") {
-        from(shadowJar)
-        into("W:\\Servers\\sample\\plugins")
-    }
-
-    create<Jar>("sourcesJar") {
-        archiveClassifier.set("sources")
+    val sourcesJar by creating(Jar::class) {
+        dependsOn(JavaPlugin.CLASSES_TASK_NAME)
+        classifier = "sources"
         from(sourceSets["main"].allSource)
     }
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("CustomItemsAPI") {
-            artifactId = project.name
-            from(components["java"])
-            artifact(tasks["sourcesJar"])
-        }
+    artifacts {
+        add("archives", sourcesJar)
     }
 }
