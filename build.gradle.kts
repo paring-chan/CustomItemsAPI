@@ -5,7 +5,7 @@ plugins {
     `maven-publish`
 }
 
-group = "studio.pikolab"
+group = "com.github.parangee"
 version = "0.1.1"
 
 repositories {

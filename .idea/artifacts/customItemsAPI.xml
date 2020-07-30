@@ -3,6 +3,8 @@
     <output-path>$PROJECT_DIR$/../lw/plugin/server/plugins</output-path>
     <root id="archive" name="customItemsAPI.jar">
       <element id="module-output" name="custom-items-api.main" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../hideandseek/.gradle/caches/modules-2/files-2.1/com.github.noonmaru/kommand/0.1.9/320aba20c1af6a855e57b869bcfd04b3faae5e7/kommand-0.1.9.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

@@ -1,10 +1,10 @@
-package studio.pikolab.customitemapi.arguments
+package com.github.parangee.customitems.arguments
 
 import com.github.noonmaru.kommand.KommandContext
 import com.github.noonmaru.kommand.argument.KommandArgument
 import com.github.noonmaru.kommand.argument.suggestions
-import studio.pikolab.customitemapi.Registry
-import studio.pikolab.customitemapi.classes.CustomItem
+import com.github.parangee.customitems.Registry
+import com.github.parangee.customitems.classes.CustomItem
 
 class ItemArgument internal constructor() : KommandArgument<CustomItem> {
     override val parseFailMessage: String

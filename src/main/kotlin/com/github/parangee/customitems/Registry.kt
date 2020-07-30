@@ -1,6 +1,6 @@
-package studio.pikolab.customitemapi
+package com.github.parangee.customitems
 
-import studio.pikolab.customitemapi.classes.CustomItem
+import com.github.parangee.customitems.classes.CustomItem
 
 class Registry {
     companion object {

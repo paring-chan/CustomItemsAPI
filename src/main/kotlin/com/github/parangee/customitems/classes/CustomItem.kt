@@ -1,4 +1,4 @@
-package studio.pikolab.customitemapi.classes
+package com.github.parangee.customitems.classes
 
 import org.bukkit.Material
 import org.bukkit.NamespacedKey
@@ -7,7 +7,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.inventory.ItemStack
 import org.bukkit.persistence.PersistentDataType
-import studio.pikolab.customitemapi.plugin.CustomItemsAPIPlugin
+import com.github.parangee.customitems.plugin.CustomItemsAPIPlugin
 
 abstract class CustomItem(val memberName: String, material: Material, amount: Int = 1) : ItemStack() {
     init {

@@ -1,4 +1,4 @@
-package studio.pikolab.customitemapi.events
+package com.github.parangee.customitems.events
 
 import org.bukkit.NamespacedKey
 import org.bukkit.entity.Player
@@ -8,8 +8,8 @@ import org.bukkit.event.block.Action
 import org.bukkit.event.entity.EntityDamageByEntityEvent
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.persistence.PersistentDataType
-import studio.pikolab.customitemapi.Registry
-import studio.pikolab.customitemapi.plugin.CustomItemsAPIPlugin
+import com.github.parangee.customitems.Registry
+import com.github.parangee.customitems.plugin.CustomItemsAPIPlugin
 
 class OnItemUse : Listener {
     @EventHandler

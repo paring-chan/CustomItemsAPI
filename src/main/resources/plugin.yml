@@ -1,5 +1,5 @@
 name: CustomItemsAPI
-main: studio.pikolab.customitemapi.plugin.CustomItemsAPIPlugin
+main: com.github.parangee.customitems.plugin.CustomItemsAPIPlugin
 version: 0.0.1
 depend:
   - Kotlin

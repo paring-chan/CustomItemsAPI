@@ -1,12 +1,12 @@
-package studio.pikolab.customitemapi.plugin
+package com.github.parangee.customitems.plugin
 
 import com.github.noonmaru.kommand.argument.player
 import com.github.noonmaru.kommand.kommand
 import org.bukkit.plugin.java.JavaPlugin
-import studio.pikolab.customitemapi.Registry
-import studio.pikolab.customitemapi.arguments.item
-import studio.pikolab.customitemapi.events.OnItemUse
-import studio.pikolab.customitemapi.classes.CustomItem
+import com.github.parangee.customitems.Registry
+import com.github.parangee.customitems.arguments.item
+import com.github.parangee.customitems.events.OnItemUse
+import com.github.parangee.customitems.classes.CustomItem
 import org.bukkit.entity.Player
 
 
