@@ -11,6 +11,7 @@ import org.bukkit.persistence.PersistentDataType
 import com.github.parangee.customitems.Registry
 import com.github.parangee.customitems.plugin.CustomItemsAPIPlugin
 import org.bukkit.Material
+import org.bukkit.event.block.BlockPlaceEvent
 import org.bukkit.event.player.PlayerFishEvent
 
 class OnItemUse : Listener {
@@ -41,6 +42,19 @@ class OnItemUse : Listener {
             )
             Registry.customItems[memberName]?.onAttack(p, e)
         }
+    }
+
+    @EventHandler
+    fun onBlockPlace(e: BlockPlaceEvent) {
+        val memberName = e.itemInHand.itemMeta.persistentDataContainer.get(
+            NamespacedKey(CustomItemsAPIPlugin.instance, "customItem"),
+            PersistentDataType.STRING
+        )
+        Registry.customItems[memberName]?.onBlockPlace(e)
+    }
+
+    @EventHandler
+    fun onBlockBreak(e: BlockPlaceEvent) {
     }
 
     @EventHandler(ignoreCancelled = true)
