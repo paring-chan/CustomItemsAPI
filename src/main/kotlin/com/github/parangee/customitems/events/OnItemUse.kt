@@ -53,10 +53,6 @@ class OnItemUse : Listener {
         Registry.customItems[memberName]?.onBlockPlace(e)
     }
 
-    @EventHandler
-    fun onBlockBreak(e: BlockPlaceEvent) {
-    }
-
     @EventHandler(ignoreCancelled = true)
     fun onFish(e: PlayerFishEvent) {
         if (e.player.activeItem != null && e.player.activeItem!!.type == Material.FISHING_ROD) {
